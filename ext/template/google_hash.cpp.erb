@@ -9,7 +9,7 @@ using std::hash;
 #include <tr1/functional>
 using std::tr1::hash;
 #else
-#error "Cannot determine libc++ or libstdc++ is used.  Required to set hash namespace"
+#error "Cannot determine libc++ (default for osx 10.9, debian) or libstdc++ (default for osx 10.8 and lower) is used.  Required to set hash namespace"
 #endif
 
 // much code stolen shamelessly from lourens' cb gem
@@ -20,7 +20,6 @@ using std::endl;
 <% if OS.posix? %>
   #include <ext/hash_set>
 <% end %>
-using std::tr1::hash;  // or __gnu_cxx::hash, or maybe tr1::hash, depending on your OS
 
 extern "C" {
 
