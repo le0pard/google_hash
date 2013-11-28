@@ -1,7 +1,16 @@
 #include <iostream>
 #include <google/<%= type %>_hash_map>
 #include <ruby.h>
+#include <new>
+#if __cplusplus >= 201103L || defined(__GXX_EXPERIMENTAL_CXX0X__) || defined(_LIBCPP_VERSION)
+#include <functional>
+using std::hash;
+#elif defined(__GNUC__)
 #include <tr1/functional>
+using std::tr1::hash;
+#else
+#error "Cannot determine libc++ or libstdc++ is used.  Required to set hash namespace"
+#endif
 
 // much code stolen shamelessly from lourens' cb gem
 
