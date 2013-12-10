@@ -6,7 +6,7 @@ require 'sane'
 # re-build google's lib locally...
 
 dir = Dir.pwd
-Dir.chdir 'sparsehash-1.8.1' do
+Dir.chdir 'sparsehash-2.0.2' do
   dir = dir + '/local_installed'
   # only if haven't already built it...except who installing a gem would ever have it already there? reinstallers?
   unless File.directory?(dir)
