@@ -1,5 +1,5 @@
-
 extern "C" {
+
 #include <ruby.h>
 // like extern void init_dense_ruby_to_ruby_;
 <% init_funcs.each do |func| %>
@@ -7,13 +7,13 @@ extern "C" {
 <% end %>
 
 void Init_google_hash() {
-  
+
 <% init_funcs.each do |func| %>
   <%=  func %>();
 <% end %>
-  
+
   rb_eval_string("::GoogleHash = ::GoogleHashDenseRubyToRuby"); // give a default
- }
- 
 }
 
+
+}
